@@ -1,0 +1,19 @@
+@import "../../SASS/MediaQuery/mediaquery";
+
+.experience {
+  padding: {
+    top: 50px;
+    bottom: 50px;
+  }
+  position: relative;
+  .experience_bg {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    @include respond-to("medium") {
+      right: 0;
+      top: -20px;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import "../../SASS/Variables/variables";
+
+.personalSummary {
+  background-color: $bg-section;
+  padding: 80px 0;
+  z-index: 5;
+  position: relative;
+  .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    .card {
+      flex: 1 173px;
+      height: 195px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 15px;
+      padding: {
+        top: 20px;
+        bottom: 20px;
+      }
+      position: relative;
+      background-color: #123333;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid $txt-color;
+      }
+      .card_title {
+        font: {
+          size: 20.18px;
+          weight: 500;
+        }
+      }
+      .num_of_proejct {
+        font: {
+          size: 10.18px;
+          weight: 300;
+        }
+        display: block;
+      }
+    }
+  }
+}

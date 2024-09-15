@@ -1,0 +1,17 @@
+export {default as linkedin} from "./linkedin-fill.svg";
+export {default as behance} from "./behance-fill.svg";
+export {default as person} from "./person.png";
+export { default as marketing} from "./marketing-icon.svg";
+export { default as appDeveloper} from "./application-programming.svg";
+export { default as userTesting} from "./user-testing.svg";
+export { default as design} from "./design.svg";
+export { default as experience} from "./experience-pc.png";
+export { default as collaboration} from "./collaboration.png";
+export { default as creativity } from "./creativity.png";
+export { default as leader } from "./leader.png";
+export { default as speech } from "./speech-bubble.png";
+export { default as problemSolving } from "./problem-solving.png";
+export { default as project_1 } from "./Project_1.png";
+export { default as project_2 } from "./Project_2.png";
+export { default as project_3 } from "./Project_3.png";
+export { default as project_4 } from "./Project_4.png";

@@ -1,0 +1,19 @@
+@import "../../SASS/Variables/variables";
+
+.btn {
+  width: fit-content;
+  background-color: $bg-btn;
+  color: $txt-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  font: {
+    size: 18.54px;
+  }
+  outline: none;
+  border: 0;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}

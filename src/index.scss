@@ -1,0 +1,38 @@
+@import "./SASS/Variables/_variables.scss";
+@import "./SASS/MediaQuery/mediaquery";
+
+@font-face {
+  font-family: "ExpoArabic-Book";
+  src: url(./Font/ExpoArabic-Book.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "ExpoArabic-Book";
+  color: $txt-color;
+}
+
+html {
+  direction: rtl;
+  body {
+    background-color: $bg-body;
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      @include respond-to("medium") {
+        width: 98%;
+      }
+      @media screen and (min-width: 768px) and (max-width: 992px) {
+        width: 85%;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    ul {
+      list-style-type: none;
+    }
+  }
+}
