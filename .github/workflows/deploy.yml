@@ -1,51 +1,36 @@
-name: Deploy
+name: Deploy Vite React App to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # Triggers on pushes to the main branch
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '16'  # Specify the node version (use the one your app requires)
 
+      # Install dependencies
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm install
 
-      - name: Build project
+      # Build the Vite app
+      - name: Build the Vite project
         run: npm run build
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: production-files
-          path: ./dist
-
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+          publish_dir: ./dist  # Path to the built Vite app directory
